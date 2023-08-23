@@ -26,9 +26,9 @@ services:
     - "db.user=shopizer_db_user"
     - "db.password=shopizer_db_password"
     - "elasticsearch.security.password=NOTREQUIRED"
-    - "config.cms.contentUrl=http://localhost:8080"
+    - "config.cms.contentUrl=http://3.134.7.177:8080"
     - "config.cms.method=default"
-    - "elasticsearch.server.host=http://localhost"
+    - "elasticsearch.server.host=http://3.134.7.177"
     - "elasticsearch.server.port=9200"
     mem_limit: 2048m
     networks:
@@ -43,7 +43,7 @@ services:
     image: shopizerecomm/shopizer-admin:latest
     container_name: shopizer-admin
     environment: 
-    - "APP_BASE_URL=http://3.14.131.145:8080/api"
+    - "APP_BASE_URL=http://3.134.7.177:8080/api"
     networks:
       - shopizer-network
     ports: 
@@ -53,7 +53,7 @@ services:
     container_name: shopizer-shop
     environment: 
     - "APP_MERCHANT=DEFAULT"
-    - "APP_BASE_URL=http://3.14.131.145:8080"
+    - "APP_BASE_URL=http://3.134.7.177:8080"
     networks:
       - shopizer-network
     ports: 
